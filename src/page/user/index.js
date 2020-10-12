@@ -52,7 +52,7 @@ class User extends Component {
     ];
   }
   componentDidMount() {
-    this.getAllUsers()
+    // this.getAllUsers()
   }
   deleteUser = async (user) => {
     Modal.confirm({

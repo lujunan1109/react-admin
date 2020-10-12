@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2020-09-16 17:01:40
+ * @LastEditTime: 2020-09-17 15:29:52
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \react-admin\src\components\header\index.js
+ */
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom'
 import menuList from '../../config/menu'
@@ -29,6 +37,8 @@ class AdminHeader extends Component {
     // 清除定时器
     clearInterval(this.intervalId)
   }
+
+
   getTime = () => {
     this.intervalId = setInterval(() => {
       const currentTime = formateTime(Date.now())
@@ -37,6 +47,8 @@ class AdminHeader extends Component {
       })
     },1000)
   }
+
+
   getTitle = () => {
     const path = this.props.location.pathname
     let title
@@ -45,7 +57,7 @@ class AdminHeader extends Component {
         title = item.title
       } else if (item.children) {
         // 在item.children 这个数组中寻找合适的 item
-        //indexOf() 方法返回调用它的 String 对象中第一次出现的指定值的索引
+        //indexOf() 方法返回调用它的 String 对象中第一次出现的指定值的索引    [...array].indexOf(item)
         //find() 方法返回数组中满足提供的测试函数的第一个元素的值。否则返回 undefined。
         const cItem = item.children.find(cItem => path.indexOf(cItem.key) === 0)
         if (cItem) {

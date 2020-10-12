@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-09-16 09:51:57
- * @LastEditTime: 2020-09-16 17:09:16
+ * @LastEditTime: 2020-09-25 17:46:06
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \DEMOd:\项目管理\react-admin-cms\antd-admin-react\src\page\admin\index.js
@@ -22,6 +22,7 @@ import NotFound from '../../page/not-found'
 import Order from '../../page/order'
 import LeftNav from '../../components/left-nav'
 import Header from '../../components/header'
+import FlagIndex from '../../page/product/flagInx'
 const { Sider, Content } = Layout;
 class Admin extends React.Component {
   render() {
@@ -49,6 +50,7 @@ class Admin extends React.Component {
               <Route path='/charts/line' component={Line}></Route>
               <Route path='/charts/pie' component={Pie}></Route>
               <Route path='/order' component={Order}></Route>
+              <Route path='/flagInx' component={FlagIndex}></Route>
               <Route component={NotFound}></Route>
             </Switch>
           </Content>

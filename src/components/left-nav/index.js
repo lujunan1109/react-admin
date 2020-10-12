@@ -1,10 +1,18 @@
+/*
+ * @Author: your name
+ * @Date: 2020-09-16 17:01:40
+ * @LastEditTime: 2020-09-27 09:10:54
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \ting_ge_blogd:\项目管理\react-admin\react-admin\src\components\left-nav\index.js
+ */
 import React from 'react';
 
 import { Link, withRouter } from 'react-router-dom'
 
 import menuList from '../../config/menu'
 
-import memoryUtils from '../../config/memoryUtils'
+// import memoryUtils from '../../config/memoryUtils'
 
 import { Menu, Icon } from 'antd';
 
@@ -15,28 +23,30 @@ const { SubMenu } = Menu;
 class LeftNav extends React.Component {
   hasAuth = (item) => {
     return true;
-    const { key, isPublic } = item
-    const menus = memoryUtils.user.role.menus
+    // const { key, isPublic } = item
+    // const menus = memoryUtils.user.role.menus
 
-    const username =  memoryUtils.user.username
-    /*
-    *1 如果username是admin
-    2. 如果item 是公开的
-    3.当前用户有此item的权限: key有没有menus中
-     * 
-     */
-    if (username === 'admin' || isPublic || menus.indexOf(key) !== -1) {
-      return true
-    } else if (item.children) {
-      return !!item.children.find((cItem) => menus.indexOf(cItem.key) !== -1)
-    }
-    return false
+    // const username =  memoryUtils.user.username
+    // /*
+    // *1 如果username是admin
+    // 2. 如果item 是公开的
+    // 3.当前用户有此item的权限: key有没有menus中
+    //  * 
+    //  */
+    // if (username === 'admin' || isPublic || menus.indexOf(key) !== -1) {
+    //   return true
+    // } else if (item.children) {
+    //   return !!item.children.find((cItem) => menus.indexOf(cItem.key) !== -1)
+    // }
+    // return false
   }
   getMenuNodes = (menuList) => {
     const path = this.props.location.pathname
     return menuList.reduce((pre, item) => {
+      // 遍历每个子路由判断是否在menus权限数组中返回布尔值
       if (this.hasAuth(item)) {
         if (!item.children) {
+        // 子类菜单没有chilren进入此循环
           pre.push((
             <Menu.Item key={item.key}>
               <Link to={item.key}>
@@ -73,11 +83,6 @@ class LeftNav extends React.Component {
     }, [])
   }
   render() {
-    let path = this.props.location.pathname
-    // console.log(path)
-    if (path.indexOf('/product') === 0) { // 当前请求的是商品或其子路由界面
-      path = '/product'
-    }
     const openKey = this.openKey
     return (
       <LeftNavWrapper>
@@ -88,7 +93,6 @@ class LeftNav extends React.Component {
         <div style={{ width: '100%' }}>
           <Menu
             defaultSelectedKeys={[openKey]}
-            selectedKeys={[path]}
             mode="inline"
             theme="dark"
           >

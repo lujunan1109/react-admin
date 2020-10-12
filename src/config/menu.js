@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2020-09-16 17:01:40
+ * @LastEditTime: 2020-09-25 17:41:14
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \ting_ge_blogd:\项目管理\react-admin\react-admin\src\config\menu.js
+ */
 const menuList = [
   {
     key: '/home',
@@ -17,6 +25,11 @@ const menuList = [
       {
         key: '/product',
         title: '商品管理',
+        icon: 'tool'
+      },
+      {
+        key: '/flagInx',
+        title: '商品索引',
         icon: 'tool'
       }
     ]

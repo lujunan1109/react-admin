@@ -45,8 +45,8 @@ class Category extends Component {
     ];
   }
   componentDidMount() {
-    this.initColumns()
-    this._getCategory(this.state.parentId)
+    // this.initColumns()
+    // this._getCategory(this.state.parentId)
   }
   showSubCategorys = (category) => {
     this.setState({

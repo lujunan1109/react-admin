@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2020-09-16 17:01:40
+ * @LastEditTime: 2020-10-10 17:49:32
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \ting_ge_blogd:\项目管理\react-admin\react-admin\src\page\login\index.js
+ */
 import React, { Component } from 'react';
 
 import {withRouter} from 'react-router-dom'
@@ -13,14 +21,14 @@ import { Form, Icon, Input, Button,message} from 'antd';
 import { LoginWrapper, LoginBox,InternetContent } from './style'
 
 class Login extends Component {
-  state = {}
   handleSubmit = e => {
     e.preventDefault();
     this.props.form.validateFields(async (err, values) => {
-      this.props.history.replace('/');
       if (err) {
-        // console.log('Received values of form: ', values);
+        console.log(err)
+      } else {
         const {username,password} = values
+        this.props.history.replace('/')
         const result = await reqLogin(username,password)
         if(result.status === 0) {
           message.success('登录成功')
@@ -30,15 +38,13 @@ class Login extends Component {
           memoryUtils.user = user
           // 保存在localStorage中 
           storage.saveUser(user)
-
           this.props.history.replace('/')
-
-        } else {
-          message.error('登录失败')
-        }
+      } else {
+        message.error('登录失败')
       }
-    });
-  };
+    }
+  })
+};
   render() {
     const { getFieldDecorator } = this.props.form;
     return (

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Statistic, Card, Icon, DatePicker, Timeline } from 'antd';
+import { Statistic, Card, Icon, DatePicker, Timeline,BackTop } from 'antd';
 
 import Line from './line'
 
@@ -9,6 +9,8 @@ import Bar from './bar'
 import { HomeWrapper } from './style'
 
 const { RangePicker } = DatePicker;
+
+
 
 const tabList = [
   {
@@ -32,7 +34,7 @@ class Home extends React.Component {
   };
   render() {
     return (
-      <HomeWrapper>
+      <HomeWrapper id="handelDocID">
         <Card title="Default size card" extra={<Icon type="apple" />} style={{ width: 300, float: 'left' }}>
           <Statistic
             title="Active"
@@ -94,6 +96,9 @@ class Home extends React.Component {
             </Card>
           </Card>
         </div>
+        　<BackTop  visibilityHeight={300} target ={()=>document.getElementById('handelDocID')} >
+    　　　　<div>UP</div>
+    　　</BackTop>
       </HomeWrapper>
     )
   }

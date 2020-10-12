@@ -40,7 +40,7 @@ class ProductHome extends Component {
     }
   }
   componentDidMount() {
-    this.getProducts(1)
+    // this.getProducts(1)
   }
   updateStatus = async (productId,newStatus) => {
     const result = await reqUpdateStatus(productId,newStatus)

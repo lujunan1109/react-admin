@@ -60,7 +60,7 @@ class Role extends Component {
     }
   }
   componentDidMount() {
-    this.getRoleList()
+    // this.getRoleList()
   }
   addRole = ()=> {
     this.form.validateFields(async (err, values) => {

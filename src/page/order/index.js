@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import Dialog from "../../components/dialog";
 import { Card, Table, Divider, Tag } from 'antd';
 
 const columns = [
@@ -155,8 +155,31 @@ const data = [
 
 
 class Order extends Component {
-
+// 高阶组件就是用组件作为参数然后输出组件
   render() {
+    let child =props=> {
+      return (
+      <p>高阶组件学习</p>
+      )
+    }
+
+    let hocFun = Cum => props=>{
+      return (
+      <Cum {...props} />
+      )
+    }
+    
+    let Foo = hocFun(child);
+
+   
+    class Zhuangshiqi extends Component {
+      render() { 
+        return ( 
+          <div>装饰器</div>
+         );
+      }
+    }
+
     return (
       <div>
         <Card title="Default size card"  style={{ width: '100%' }}>
@@ -167,6 +190,11 @@ class Order extends Component {
           bordered 
           />
         </Card>
+        <Foo/>
+        <Zhuangshiqi/>
+        <Dialog>
+          <p>我是一段文本</p>
+        </Dialog>
       </div>
     );
   }
