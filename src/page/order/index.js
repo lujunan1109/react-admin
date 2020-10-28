@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Dialog from "../../components/dialog";
+import Todos from "../../components/Todos";
+import Contenx from "../../components/contenx";
 import { Card, Table, Divider, Tag } from 'antd';
 
 const columns = [
@@ -192,9 +194,11 @@ class Order extends Component {
         </Card>
         <Foo/>
         <Zhuangshiqi/>
-        <Dialog>
+        {/* <Dialog>
           <p>我是一段文本</p>
-        </Dialog>
+        </Dialog> */}
+        <Todos/>
+        <Contenx/>
       </div>
     );
   }

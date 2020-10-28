@@ -1,0 +1,20 @@
+
+    .less {
+        background-color: rgba(0,0,0,0.2);
+        color: blue;
+        text-align: center;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        border-radius: 50px;
+    }
+    .div {
+        padding:24px;
+        position:relative;
+        height:100%;
+        overflow:scroll;
+    }
+
+ 
+
+

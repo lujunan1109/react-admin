@@ -1,0 +1,23 @@
+.done {
+    text-decoration: line-through;
+}
+
+.checked-int {
+    margin-right: 10px;
+}
+
+.todo-box {
+    background-color: gold;
+    color: hotpink;
+}
+
+.delete-item {
+    background: red;
+    color: black;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.input-block {
+    display: block;
+}

@@ -1,0 +1,18 @@
+
+    .box {
+        width: 900px;
+        background: black;
+        display: flex;
+        /* flex-direction: row-reverse;
+        */
+        flex-wrap: nowrap;
+        justify-content: space-between;
+       
+    }
+    .li {
+        width: 200px;
+        height:30px;
+        line-height: 30px;
+        text-align: center;
+        background: salmon;
+    }

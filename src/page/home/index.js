@@ -1,16 +1,11 @@
 import React from 'react';
 
 import { Statistic, Card, Icon, DatePicker, Timeline,BackTop } from 'antd';
-
+import './styles.css';
 import Line from './line'
-
 import Bar from './bar'
-
-import { HomeWrapper } from './style'
-
+// import { div } from './style'
 const { RangePicker } = DatePicker;
-
-
 
 const tabList = [
   {
@@ -32,9 +27,11 @@ class Home extends React.Component {
     // console.log(key, type);
     this.setState({ [type]: key });
   };
+
+
   render() {
     return (
-      <HomeWrapper id="handelDocID">
+      <div id="handelDocID" className="div">
         <Card title="Default size card" extra={<Icon type="apple" />} style={{ width: 300, float: 'left' }}>
           <Statistic
             title="Active"
@@ -96,10 +93,10 @@ class Home extends React.Component {
             </Card>
           </Card>
         </div>
-        　<BackTop  visibilityHeight={300} target ={()=>document.getElementById('handelDocID')} >
-    　　　　<div>UP</div>
+        　<BackTop   visibilityHeight={100} target ={()=>document.getElementById('handelDocID')} >
+    　　　　<div className="less">TOP</div>
     　　</BackTop>
-      </HomeWrapper>
+      </div>
     )
   }
 }
